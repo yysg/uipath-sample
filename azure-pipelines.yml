@@ -14,11 +14,11 @@ steps:
   inputs:
     versionType: 'CurrentVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'test-uipath'
+    orchestratorConnection: 'uipath'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
 - task: UiPathDeploy@2
   inputs:
-    orchestratorConnection: 'test-uipath'
+    orchestratorConnection: 'uipath'
     packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
     folderName: 'dev'
     entryPoints: 'Main.xaml'
