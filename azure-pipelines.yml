@@ -16,11 +16,14 @@ steps:
     projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'uipath'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-- task: UiPathDeploy@2
+- task: UiPathTest@2
   inputs:
+    testTarget: 'TestProject'
     orchestratorConnection: 'uipath'
-    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'dev'
-    entryPoints: 'Main.xaml'
-
+    folderName: 'Shared'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'pack_test_case'
+    publishLocation: 'Container'
 
