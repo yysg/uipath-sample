@@ -16,11 +16,11 @@ steps:
     projectJsonPath: '$(Build.SourcesDirectory)'
     orchestratorConnection: 'uipath'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-- task: UiPathTest@2
-  inputs:
-    testTarget: 'TestProject'
-    orchestratorConnection: 'uipath'
-    folderName: 'Shared'
+# - task: UiPathTest@2
+#   inputs:
+#     testTarget: 'TestProject'
+#     orchestratorConnection: 'uipath'
+#     folderName: 'Shared'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
