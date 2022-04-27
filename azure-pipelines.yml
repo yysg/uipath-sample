@@ -14,12 +14,12 @@ steps:
   inputs:
     versionType: 'CurrentVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'uipath-2'
+    orchestratorConnection: 'uipath-zhao'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
 - task: UiPathTest@2
   inputs:
     testTarget: 'TestProject'
-    orchestratorConnection: 'uipath-2'
+    orchestratorConnection: 'uipath-zhao'
     folderName: 'Shared'
 - task: PublishBuildArtifacts@1
   inputs:
