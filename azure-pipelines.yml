@@ -13,7 +13,7 @@ steps:
 - task: UiPathTest@2
   inputs:
     testTarget: 'TestSet'
-    orchestratorConnection: 'uipath-zhaoxy'
+    orchestratorConnection: 'zhaoxy'
     testSet: 'test'
     folderName: 'confirm'
 
