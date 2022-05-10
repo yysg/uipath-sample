@@ -13,9 +13,9 @@ steps:
 - task: UiPathTest@2
   inputs:
     testTarget: 'TestSet'
-    orchestratorConnection: 'uipath-zhaoxy'
+    orchestratorConnection: 'uipath'
     testSet: 'test'
-    folderName: 'confirm'
+    folderName: 'Shared'
 
 
 
