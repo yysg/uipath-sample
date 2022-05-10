@@ -4,27 +4,18 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- dev
 
 pool:
   vmImage: windows-latest
 
 steps:
-- task: UiPathPack@2
+- task: UiPathTest@2
   inputs:
-    versionType: 'AutoVersion'
-    projectJsonPath: '$(Build.SourcesDirectory)'
+    testTarget: 'TestSet'
     orchestratorConnection: 'uipath'
-    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-# - task: UiPathTest@2
-#   inputs:
-#     testTarget: 'TestProject'
-#     orchestratorConnection: 'uipath'
-#     folderName: 'Shared'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'pack_test_case'
-    publishLocation: 'Container'
+    testSet: 'test'
+    folderName: 'confirm'
+
 
 
