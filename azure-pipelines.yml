@@ -10,21 +10,22 @@ pool:
   vmImage: windows-latest
 
 steps:
-- task: UiPathPack@2
-  inputs:
-    versionType: 'AutoVersion'
-    projectJsonPath: '$(Build.SourcesDirectory)'
-    orchestratorConnection: 'uipath'
-    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-# - task: UiPathTest@2
+# - task: UiPathPack@2
 #   inputs:
-#     testTarget: 'TestProject'
+#     versionType: 'AutoVersion'
+#     projectJsonPath: '$(Build.SourcesDirectory)'
 #     orchestratorConnection: 'uipath'
-#     folderName: 'Shared'
-- task: PublishBuildArtifacts@1
+#     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+- task: UiPathTest@2
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'pack_test_case'
-    publishLocation: 'Container'
+    testTarget: 'TestSet'
+    orchestratorConnection: 'uipath'
+    testSet: 'test'
+    folderName: 'Shared'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#     ArtifactName: 'pack_test_case'
+#     publishLocation: 'Container'
 
 
