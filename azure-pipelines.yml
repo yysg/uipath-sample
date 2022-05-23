@@ -20,7 +20,7 @@ steps:
   inputs:
     testTarget: 'TestSet'
     orchestratorConnection: 'uipath'
-    testSet: 'test'
+    testSet: 'demo'
     folderName: 'Shared'
 # - task: PublishBuildArtifacts@1
 #   inputs:
